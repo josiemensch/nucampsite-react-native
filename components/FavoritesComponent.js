@@ -31,29 +31,31 @@ class Favorites extends Component {
             return (
                 <SwipeRow rightOpenValue={-100} style={styles.swipeRow}>
                     <View style={styles.deleteView}>
-                    <TouchableOpacity
-                            style={styles.deleteTouchable}
-                            onPress={() =>
-                                Alert.alert(
-                                    'Delete Favorite?',
-                                    'Are you sure you wish to delete the favorite campsite ' +
-                                        item.name +
-                                        '?',
-                                    [
-                                        {
-                                            text: 'Cancel',
-                                            onPress: () => console.log(item.name + 'Not Deleted'),
-                                            style: 'cancel'
-                                        },
-                                        {
-                                            text: 'OK',
-                                            onPress: () => this.props.deleteFavorite(item.id)
-                                        },
-                                    ],
-                                    { cancelable: false }
-                                )
-                            }
+                        <TouchableOpacity
+                        style={styles.deleteTouchable}
+                        onPress={() => 
+                            Alert.alert(
+                                'Delete Favorite?',
+                                'Are you sure you wish to delete the favorite campsite ' +
+                                    item.name +
+                                    '?',
+                                [
+                                    {
+                                        text: 'Cancel',
+                                        onPress: () => console.log(item.name + 'Not Deleted'),
+                                        style: 'cancel'
+                                    },
+                                    {
+                                        text: 'OK',
+                                        onPress: () => this.props.deleteFavorite(item.id)
+                                    },
+                                ],
+                                { cancelable: false }
+                            )
+                        }
                         >
+                        <Text style={styles.deleteText}>Delete</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View>
